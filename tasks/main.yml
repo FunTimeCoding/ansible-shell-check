@@ -1,2 +1,9 @@
 ---
-# tasks file for ansible-shell-check
+- apt:
+    name: shellcheck
+  become: true
+  when: ansible_system == 'Linux'
+
+- homebrew:
+    name: shellcheck
+  when: ansible_system == 'Darwin'
