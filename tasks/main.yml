@@ -4,6 +4,11 @@
   remote_user: root
   when: ansible_os_family == 'Debian'
 
+- pacman:
+    name: shellcheck
+  remote_user: root
+  when: ansible_distribution == 'Archlinux'
+
 - homebrew:
     name: shellcheck
   when: ansible_system == 'Darwin'
