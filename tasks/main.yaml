@@ -2,7 +2,13 @@
 - apt:
     name: shellcheck
   remote_user: root
-  when: ansible_os_family == 'Debian'
+  when: ansible_os_family == 'Debian' and shellcheck.source == 'debian'
+
+- command: snap install shellcheck
+  args:
+    creates: /snap/bin/shellcheck
+  remote_user: root
+  when: ansible_os_family == 'Debian' and shellcheck.source == 'snappy'
 
 - pacman:
     name: shellcheck
