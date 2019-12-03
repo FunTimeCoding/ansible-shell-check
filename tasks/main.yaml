@@ -4,6 +4,7 @@
   remote_user: root
   when: ansible_os_family == 'Debian' and shellcheck.source == 'debian'
 
+# TODO: Use snap module once running on Ansible 2.8 https://docs.ansible.com/ansible/latest/modules/snap_module.html
 - command: snap install shellcheck
   args:
     creates: /snap/bin/shellcheck
