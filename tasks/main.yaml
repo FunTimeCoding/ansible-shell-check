@@ -9,7 +9,7 @@
   args:
     creates: /snap/bin/shellcheck
   remote_user: root
-  when: ansible_os_family == 'Debian' and shellcheck.source == 'snappy'
+  when: ansible_os_family == 'Debian' and shellcheck.source == 'snap'
 
 - pacman:
     name: shellcheck
